@@ -17,6 +17,7 @@ migrate = Migrate(app, db)
 
 def make_shell_context():
     return dict(app=app, db=db,SVSuserReg=SVSuserReg,SVSIpCamReg=SVSIpCamReg,SVSFaceTab=SVSFaceTab)
+
 manager.add_command("shell", Shell(make_context=make_shell_context))
 manager.add_command('db', MigrateCommand)
 
